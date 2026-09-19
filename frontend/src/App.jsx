@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { HashRouter, Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
@@ -46,7 +46,8 @@ export default function App() {
       </header>
 
       <main className="container">
-        <Routes>
+        <HashRouter>
+  <Routes>
           <Route path="/" element={<Home user={user} />} />
           <Route path="/login" element={<Login onLogin={saveAuth} />} />
           <Route path="/signup" element={<Signup onLogin={saveAuth} />} />
@@ -59,7 +60,8 @@ export default function App() {
             element={user ? <CreatePoll /> : <Navigate to="/login" />}
           />
           <Route path="/poll/:id" element={<Poll />} />
-        </Routes>
+          </Routes>
+</HashRouter>
       </main>
     </div>
   );
