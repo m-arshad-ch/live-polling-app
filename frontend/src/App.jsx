@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HashRouter, Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
@@ -26,7 +26,6 @@ export default function App() {
   }
 
   return (
-    <HashRouter>
       <div className="app">
         <header className="navbar">
           <Link to="/" className="brand">PulsePoll</Link>
@@ -67,7 +66,6 @@ export default function App() {
           </Routes>
         </main>
       </div>
-    </HashRouter>
   );
 }
 
