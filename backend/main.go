@@ -60,11 +60,11 @@ func main() {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{cfg.FrontendURL},
-		AllowMethods:     []string{"GET", "POST", "PUT", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
-		AllowCredentials: true,
-	}))
+    AllowOrigins:     []string{"https://live-polling-app-3z5k.onrender.com"},
+    AllowMethods:     []string{"GET", "POST", "PUT", "OPTIONS"},
+    AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+    AllowCredentials: true,
+}))
 
 	routes.Setup(r, authController, pollController, cfg.JWTSecret)
 
